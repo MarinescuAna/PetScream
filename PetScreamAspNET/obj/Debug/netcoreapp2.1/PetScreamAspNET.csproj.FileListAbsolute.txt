@@ -1,0 +1,17 @@
+C:\Users\marin\OneDrive\Documente\GitHub\PetScream\PetScreamAspNET\bin\Debug\netcoreapp2.1\appsettings.Development.json
+C:\Users\marin\OneDrive\Documente\GitHub\PetScream\PetScreamAspNET\bin\Debug\netcoreapp2.1\appsettings.json
+C:\Users\marin\OneDrive\Documente\GitHub\PetScream\PetScreamAspNET\bin\Debug\netcoreapp2.1\PetScreamAspNET.deps.json
+C:\Users\marin\OneDrive\Documente\GitHub\PetScream\PetScreamAspNET\bin\Debug\netcoreapp2.1\PetScreamAspNET.runtimeconfig.json
+C:\Users\marin\OneDrive\Documente\GitHub\PetScream\PetScreamAspNET\bin\Debug\netcoreapp2.1\PetScreamAspNET.runtimeconfig.dev.json
+C:\Users\marin\OneDrive\Documente\GitHub\PetScream\PetScreamAspNET\bin\Debug\netcoreapp2.1\PetScreamAspNET.dll
+C:\Users\marin\OneDrive\Documente\GitHub\PetScream\PetScreamAspNET\bin\Debug\netcoreapp2.1\PetScreamAspNET.pdb
+C:\Users\marin\OneDrive\Documente\GitHub\PetScream\PetScreamAspNET\obj\Debug\netcoreapp2.1\PetScreamAspNET.csprojAssemblyReference.cache
+C:\Users\marin\OneDrive\Documente\GitHub\PetScream\PetScreamAspNET\obj\Debug\netcoreapp2.1\PetScreamAspNET.AssemblyInfoInputs.cache
+C:\Users\marin\OneDrive\Documente\GitHub\PetScream\PetScreamAspNET\obj\Debug\netcoreapp2.1\PetScreamAspNET.AssemblyInfo.cs
+C:\Users\marin\OneDrive\Documente\GitHub\PetScream\PetScreamAspNET\obj\Debug\netcoreapp2.1\PetScreamAspNET.csproj.CoreCompileInputs.cache
+C:\Users\marin\OneDrive\Documente\GitHub\PetScream\PetScreamAspNET\obj\Debug\netcoreapp2.1\PetScreamAspNET.RazorAssemblyInfo.cache
+C:\Users\marin\OneDrive\Documente\GitHub\PetScream\PetScreamAspNET\obj\Debug\netcoreapp2.1\PetScreamAspNET.RazorAssemblyInfo.cs
+C:\Users\marin\OneDrive\Documente\GitHub\PetScream\PetScreamAspNET\obj\Debug\netcoreapp2.1\PetScreamAspNET.RazorTargetAssemblyInfo.cache
+C:\Users\marin\OneDrive\Documente\GitHub\PetScream\PetScreamAspNET\obj\Debug\netcoreapp2.1\PetScreamAspNET.dll
+C:\Users\marin\OneDrive\Documente\GitHub\PetScream\PetScreamAspNET\obj\Debug\netcoreapp2.1\PetScreamAspNET.pdb
+C:\Users\marin\OneDrive\Documente\GitHub\PetScream\PetScreamAspNET\obj\Debug\netcoreapp2.1\PetScreamAspNET.genruntimeconfig.cache
