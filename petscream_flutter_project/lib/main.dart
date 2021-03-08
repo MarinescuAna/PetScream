@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
+import 'package:petscream_flutter_project/project/account/login.dart';
+import 'package:petscream_flutter_project/project/account/register.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:pet_scream_flutter/Pages/Account/login.dart';
 
 void main() {
   runApp(MyApp());
@@ -35,7 +35,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {
     super.initState();
-   // checkLoginStatus();
+    // checkLoginStatus();
   }
 
   checkLoginStatus() async {
@@ -43,7 +43,7 @@ class _MyHomePageState extends State<MyHomePage> {
     if (sharedPreferences.getString("token") == null) {
       Navigator.of(context).pushAndRemoveUntil(
           MaterialPageRoute(builder: (BuildContext context) => Login()),
-          (Route<dynamic> route) => false);
+              (Route<dynamic> route) => false);
     }
   }
 
@@ -58,7 +58,7 @@ class _MyHomePageState extends State<MyHomePage> {
               Navigator.of(context).pushAndRemoveUntil(
                   MaterialPageRoute(
                       builder: (BuildContext context) => Login()),
-                  (Route<dynamic> route) => false);
+                      (Route<dynamic> route) => false);
             },
 
           ),
@@ -69,7 +69,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: ListView(
           children: <Widget>[
             DrawerHeader(
-              child: Image.asset("images/logoPetScream.jpg"),
+             // child: Image.asset("images/logoPetScream.jpg"),
             ),
             ListTile(
               title: Text('Login'),
@@ -88,6 +88,12 @@ class _MyHomePageState extends State<MyHomePage> {
             ListTile(
               title: Text('Register'),
               trailing: Icon(Icons.app_registration),
+              onTap: (){
+                Navigator.of(context).pop();
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (BuildContext context) => Register()
+                ));
+              },
             ),
             ListTile(
               title: Text('Home'),
