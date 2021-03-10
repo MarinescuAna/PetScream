@@ -1,11 +1,12 @@
+
 import 'package:flutter/material.dart';
 
-class Register extends StatefulWidget {
+class Post extends StatefulWidget {
   @override
-  _RegisterState createState() => _RegisterState();
+  _PostState createState() => _PostState();
 }
 
-class _RegisterState extends State<Register> {
+class _PostState extends State<Post> {
   bool _isLoading = false;
 
   @override
@@ -32,11 +33,12 @@ class _RegisterState extends State<Register> {
       ),
     );
   }
-  final TextEditingController nameController = new TextEditingController();
-  final TextEditingController passwordConfirmationController = new TextEditingController();
-  final TextEditingController emailController = new TextEditingController();
-  final TextEditingController passwordController = new TextEditingController();
-  final TextEditingController phoneController = new TextEditingController();
+
+  final TextEditingController titleController = new TextEditingController();
+  final TextEditingController descriptionController = new TextEditingController();
+  final TextEditingController ownerAddressController = new TextEditingController();
+  final TextEditingController dateLostController = new TextEditingController();
+  final TextEditingController locationController = new TextEditingController();
 
   Container textSelection() {
     return Container(
@@ -44,13 +46,12 @@ class _RegisterState extends State<Register> {
       child: Column(
         children: <Widget>[
           TextFormField(
-            controller: nameController,
+            controller: titleController,
             cursorColor: Colors.black,
             style: TextStyle(color: Colors.black),
-
             decoration: InputDecoration(
-                icon: Icon(Icons.person, color: Colors.black),
-                hintText: "FullName",
+                icon: Icon(Icons.title, color: Colors.black),
+                hintText: "Ad title",
                 border: UnderlineInputBorder(
                     borderSide: BorderSide(color: Colors.black)),
                 hintStyle: TextStyle(color: Colors.black)),
@@ -59,42 +60,27 @@ class _RegisterState extends State<Register> {
             height: 30,
           ),
           TextFormField(
-            controller: phoneController,
+            controller: descriptionController,
             cursorColor: Colors.black,
             style: TextStyle(color: Colors.black),
-
             decoration: InputDecoration(
-                icon: Icon(Icons.phone, color: Colors.black),
-                hintText: "Phone",
-                border: UnderlineInputBorder(
-                    borderSide: BorderSide(color: Colors.black)),
-                hintStyle: TextStyle(color: Colors.black)),
+              icon: Icon(Icons.pets, color: Colors.black),
+              hintText: "What your pet looks like?",
+              border: UnderlineInputBorder(
+                  borderSide: BorderSide(color: Colors.black)),
+              hintStyle: TextStyle(color: Colors.black),
+            ),
           ),
-          SizedBox(
-            height: 30,
-          ),
+      SizedBox(
+      height: 30,
+    ),
           TextFormField(
-            controller: emailController,
+            controller: ownerAddressController,
             cursorColor: Colors.black,
             style: TextStyle(color: Colors.black),
             decoration: InputDecoration(
-                icon: Icon(Icons.email, color: Colors.black),
-                hintText: "Email",
-                border: UnderlineInputBorder(
-                    borderSide: BorderSide(color: Colors.black)),
-                hintStyle: TextStyle(color: Colors.black)),
-          ),
-          SizedBox(
-            height: 30,
-          ),
-          TextFormField(
-            controller: passwordController,
-            cursorColor: Colors.black,
-            obscureText: true,
-            style: TextStyle(color: Colors.black),
-            decoration: InputDecoration(
-              icon: Icon(Icons.lock, color: Colors.black),
-              hintText: "Password",
+              icon: Icon(Icons.location_city, color: Colors.black),
+              hintText: "Where you can be found?",
               border: UnderlineInputBorder(
                   borderSide: BorderSide(color: Colors.black)),
               hintStyle: TextStyle(color: Colors.black),
@@ -104,13 +90,27 @@ class _RegisterState extends State<Register> {
             height: 30,
           ),
           TextFormField(
-            controller: passwordConfirmationController,
+            controller: dateLostController,
             cursorColor: Colors.black,
-            obscureText: true,
             style: TextStyle(color: Colors.black),
             decoration: InputDecoration(
-              icon: Icon(Icons.lock, color: Colors.black),
-              hintText: "Confirm password",
+              icon: Icon(Icons.calendar_today_outlined, color: Colors.black),
+              hintText: "When you lost your pet?",
+              border: UnderlineInputBorder(
+                  borderSide: BorderSide(color: Colors.black)),
+              hintStyle: TextStyle(color: Colors.black),
+            ),
+          ),
+          SizedBox(
+            height: 30,
+          ),
+          TextFormField(
+            controller: locationController,
+            cursorColor: Colors.black,
+            style: TextStyle(color: Colors.black),
+            decoration: InputDecoration(
+              icon: Icon(Icons.place, color: Colors.black),
+              hintText: "Where you lost him?",
               border: UnderlineInputBorder(
                   borderSide: BorderSide(color: Colors.black)),
               hintStyle: TextStyle(color: Colors.black),
@@ -125,9 +125,9 @@ class _RegisterState extends State<Register> {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 30),
       child: Text(
-        "Register",
+        "Post a new ad",
         style: TextStyle(
-            color: Colors.black, fontSize: 40, fontWeight: FontWeight.bold),
+            color: Colors.black, fontSize: 30, fontWeight: FontWeight.bold),
       ),
     );
   }
@@ -138,24 +138,22 @@ class _RegisterState extends State<Register> {
       height: 40.0,
       padding: EdgeInsets.symmetric(horizontal: 15.0),
       margin: EdgeInsets.only(top: 15.0),
-      child: RaisedButton(
-        onPressed: emailController.text == "" || passwordController.text == ""
+     child: RaisedButton(
+     /* onPressed: emailController.text == "" || passwordController.text == ""
             ? null
             : () {
           setState(() {
             _isLoading = true;
           });
           signIn(emailController.text, passwordController.text);
-        },
+        },*/
         elevation: 0.0,
         color: Colors.black,
-        child: Text("Register", style: TextStyle(color: Colors.white70)),
+        child: Text("Post", style: TextStyle(color: Colors.white70)),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
       ),
     );
   }
-
-
   signIn(String email, pass) async {
     /* SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
     Map data = {

@@ -11,12 +11,17 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.grey,
+        title: Text("PetScream", style: TextStyle(color: Colors.white)),
+      ),
       body: Container(
         decoration: BoxDecoration(
-            gradient: LinearGradient(colors: [
-              Colors.grey,
-              Colors.teal,
-            ], begin: Alignment.topCenter, end: Alignment.bottomCenter)),
+          image: DecorationImage(
+            image: AssetImage("images/background2.jpg"),
+            fit: BoxFit.cover,
+          ),
+        ),
         child: ListView(
           children: <Widget>[
             headerSelection(),
@@ -38,29 +43,29 @@ class _LoginState extends State<Login> {
         children: <Widget>[
           TextFormField(
             controller: emailController,
-            cursorColor: Colors.white,
-            style: TextStyle(color: Colors.white70),
+            cursorColor: Colors.black,
+            style: TextStyle(color: Colors.black),
             decoration: InputDecoration(
-                icon: Icon(Icons.email, color: Colors.white70),
+                icon: Icon(Icons.email, color: Colors.black),
                 hintText: "Email or phone number",
                 border: UnderlineInputBorder(
-                    borderSide: BorderSide(color: Colors.white70)),
-                hintStyle: TextStyle(color: Colors.white70)),
+                    borderSide: BorderSide(color: Colors.black)),
+                hintStyle: TextStyle(color: Colors.black)),
           ),
           SizedBox(
             height: 30,
           ),
           TextFormField(
             controller: passwordController,
-            cursorColor: Colors.white,
+            cursorColor: Colors.black,
             obscureText: true,
-            style: TextStyle(color: Colors.white70),
+            style: TextStyle(color: Colors.black),
             decoration: InputDecoration(
-              icon: Icon(Icons.lock, color: Colors.white70),
+              icon: Icon(Icons.lock, color: Colors.black),
               hintText: "Password",
               border: UnderlineInputBorder(
-                  borderSide: BorderSide(color: Colors.white70)),
-              hintStyle: TextStyle(color: Colors.white70),
+                  borderSide: BorderSide(color: Colors.black)),
+              hintStyle: TextStyle(color: Colors.black),
             ),
           )
         ],
@@ -74,7 +79,7 @@ class _LoginState extends State<Login> {
       child: Text(
         "Login",
         style: TextStyle(
-            color: Colors.white70, fontSize: 40, fontWeight: FontWeight.bold),
+            color: Colors.black, fontSize: 40, fontWeight: FontWeight.bold),
       ),
     );
   }
@@ -95,7 +100,7 @@ class _LoginState extends State<Login> {
           signIn(emailController.text, passwordController.text);
         },
         elevation: 0.0,
-        color: Colors.purple,
+        color: Colors.black,
         child: Text("Login", style: TextStyle(color: Colors.white70)),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
       ),
