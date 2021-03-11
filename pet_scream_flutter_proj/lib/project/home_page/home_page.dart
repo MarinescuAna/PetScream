@@ -30,7 +30,7 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ),
-      drawer: NoAccountUI()
+      drawer: AccountUI()
     );
   }
 }
