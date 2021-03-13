@@ -11,7 +11,20 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.1.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="2.1.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.1.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.1.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.0.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PetScreamAspNET.Common\PetScreamAspNET.Common.csproj" />
+    <ProjectReference Include="..\PetScreamAspNET.DataAccessLayer.Domain\PetScreamAspNET.DataAccessLayer.Domain.csproj" />
+    <ProjectReference Include="..\PetScreamAspNET.DataAccessLayer.Repository\PetScreamAspNET.DataAccessLayer.Repository.csproj" />
   </ItemGroup>
 
 </Project>

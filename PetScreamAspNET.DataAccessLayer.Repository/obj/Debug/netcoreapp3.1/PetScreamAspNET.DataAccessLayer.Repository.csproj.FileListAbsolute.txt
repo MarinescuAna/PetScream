@@ -1,0 +1,4 @@
+C:\Users\marin\OneDrive\Documente\GitHub\PetScream\PetScreamAspNET.DataAccessLayer.Repository\obj\Debug\netcoreapp3.1\PetScreamAspNET.DataAccessLayer.Repository.csprojAssemblyReference.cache
+C:\Users\marin\OneDrive\Documente\GitHub\PetScream\PetScreamAspNET.DataAccessLayer.Repository\obj\Debug\netcoreapp3.1\PetScreamAspNET.DataAccessLayer.Repository.AssemblyInfoInputs.cache
+C:\Users\marin\OneDrive\Documente\GitHub\PetScream\PetScreamAspNET.DataAccessLayer.Repository\obj\Debug\netcoreapp3.1\PetScreamAspNET.DataAccessLayer.Repository.AssemblyInfo.cs
+C:\Users\marin\OneDrive\Documente\GitHub\PetScream\PetScreamAspNET.DataAccessLayer.Repository\obj\Debug\netcoreapp3.1\PetScreamAspNET.DataAccessLayer.Repository.csproj.CoreCompileInputs.cache

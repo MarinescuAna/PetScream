@@ -5,6 +5,12 @@ C:\Users\marin\OneDrive\Documente\GitHub\PetScream\PetScreamAspNET\bin\Debug\net
 C:\Users\marin\OneDrive\Documente\GitHub\PetScream\PetScreamAspNET\bin\Debug\netcoreapp2.1\PetScreamAspNET.runtimeconfig.dev.json
 C:\Users\marin\OneDrive\Documente\GitHub\PetScream\PetScreamAspNET\bin\Debug\netcoreapp2.1\PetScreamAspNET.dll
 C:\Users\marin\OneDrive\Documente\GitHub\PetScream\PetScreamAspNET\bin\Debug\netcoreapp2.1\PetScreamAspNET.pdb
+C:\Users\marin\OneDrive\Documente\GitHub\PetScream\PetScreamAspNET\bin\Debug\netcoreapp2.1\PetScreamAspNET.Common.dll
+C:\Users\marin\OneDrive\Documente\GitHub\PetScream\PetScreamAspNET\bin\Debug\netcoreapp2.1\PetScreamAspNET.DataAccessLayer.Domain.dll
+C:\Users\marin\OneDrive\Documente\GitHub\PetScream\PetScreamAspNET\bin\Debug\netcoreapp2.1\PetScreamAspNET.DataAccessLayer.Repository.dll
+C:\Users\marin\OneDrive\Documente\GitHub\PetScream\PetScreamAspNET\bin\Debug\netcoreapp2.1\PetScreamAspNET.Common.pdb
+C:\Users\marin\OneDrive\Documente\GitHub\PetScream\PetScreamAspNET\bin\Debug\netcoreapp2.1\PetScreamAspNET.DataAccessLayer.Domain.pdb
+C:\Users\marin\OneDrive\Documente\GitHub\PetScream\PetScreamAspNET\bin\Debug\netcoreapp2.1\PetScreamAspNET.DataAccessLayer.Repository.pdb
 C:\Users\marin\OneDrive\Documente\GitHub\PetScream\PetScreamAspNET\obj\Debug\netcoreapp2.1\PetScreamAspNET.csprojAssemblyReference.cache
 C:\Users\marin\OneDrive\Documente\GitHub\PetScream\PetScreamAspNET\obj\Debug\netcoreapp2.1\PetScreamAspNET.AssemblyInfoInputs.cache
 C:\Users\marin\OneDrive\Documente\GitHub\PetScream\PetScreamAspNET\obj\Debug\netcoreapp2.1\PetScreamAspNET.AssemblyInfo.cs
@@ -12,6 +18,7 @@ C:\Users\marin\OneDrive\Documente\GitHub\PetScream\PetScreamAspNET\obj\Debug\net
 C:\Users\marin\OneDrive\Documente\GitHub\PetScream\PetScreamAspNET\obj\Debug\netcoreapp2.1\PetScreamAspNET.RazorAssemblyInfo.cache
 C:\Users\marin\OneDrive\Documente\GitHub\PetScream\PetScreamAspNET\obj\Debug\netcoreapp2.1\PetScreamAspNET.RazorAssemblyInfo.cs
 C:\Users\marin\OneDrive\Documente\GitHub\PetScream\PetScreamAspNET\obj\Debug\netcoreapp2.1\PetScreamAspNET.RazorTargetAssemblyInfo.cache
+C:\Users\marin\OneDrive\Documente\GitHub\PetScream\PetScreamAspNET\obj\Debug\netcoreapp2.1\PetScreamAspNET.csproj.CopyComplete
 C:\Users\marin\OneDrive\Documente\GitHub\PetScream\PetScreamAspNET\obj\Debug\netcoreapp2.1\PetScreamAspNET.dll
 C:\Users\marin\OneDrive\Documente\GitHub\PetScream\PetScreamAspNET\obj\Debug\netcoreapp2.1\PetScreamAspNET.pdb
 C:\Users\marin\OneDrive\Documente\GitHub\PetScream\PetScreamAspNET\obj\Debug\netcoreapp2.1\PetScreamAspNET.genruntimeconfig.cache

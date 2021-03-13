@@ -1,0 +1,12 @@
+C:\Users\marin\OneDrive\Documente\GitHub\PetScream\PetScreamAspNET.DataAccessLayer.Repository\bin\Debug\netcoreapp2.1\PetScreamAspNET.DataAccessLayer.Repository.deps.json
+C:\Users\marin\OneDrive\Documente\GitHub\PetScream\PetScreamAspNET.DataAccessLayer.Repository\bin\Debug\netcoreapp2.1\PetScreamAspNET.DataAccessLayer.Repository.dll
+C:\Users\marin\OneDrive\Documente\GitHub\PetScream\PetScreamAspNET.DataAccessLayer.Repository\bin\Debug\netcoreapp2.1\PetScreamAspNET.DataAccessLayer.Repository.pdb
+C:\Users\marin\OneDrive\Documente\GitHub\PetScream\PetScreamAspNET.DataAccessLayer.Repository\bin\Debug\netcoreapp2.1\PetScreamAspNET.DataAccessLayer.Domain.dll
+C:\Users\marin\OneDrive\Documente\GitHub\PetScream\PetScreamAspNET.DataAccessLayer.Repository\bin\Debug\netcoreapp2.1\PetScreamAspNET.DataAccessLayer.Domain.pdb
+C:\Users\marin\OneDrive\Documente\GitHub\PetScream\PetScreamAspNET.DataAccessLayer.Repository\obj\Debug\netcoreapp2.1\PetScreamAspNET.DataAccessLayer.Repository.csprojAssemblyReference.cache
+C:\Users\marin\OneDrive\Documente\GitHub\PetScream\PetScreamAspNET.DataAccessLayer.Repository\obj\Debug\netcoreapp2.1\PetScreamAspNET.DataAccessLayer.Repository.AssemblyInfoInputs.cache
+C:\Users\marin\OneDrive\Documente\GitHub\PetScream\PetScreamAspNET.DataAccessLayer.Repository\obj\Debug\netcoreapp2.1\PetScreamAspNET.DataAccessLayer.Repository.AssemblyInfo.cs
+C:\Users\marin\OneDrive\Documente\GitHub\PetScream\PetScreamAspNET.DataAccessLayer.Repository\obj\Debug\netcoreapp2.1\PetScreamAspNET.DataAccessLayer.Repository.csproj.CoreCompileInputs.cache
+C:\Users\marin\OneDrive\Documente\GitHub\PetScream\PetScreamAspNET.DataAccessLayer.Repository\obj\Debug\netcoreapp2.1\PetScreamAspNET.DataAccessLayer.Repository.csproj.CopyComplete
+C:\Users\marin\OneDrive\Documente\GitHub\PetScream\PetScreamAspNET.DataAccessLayer.Repository\obj\Debug\netcoreapp2.1\PetScreamAspNET.DataAccessLayer.Repository.dll
+C:\Users\marin\OneDrive\Documente\GitHub\PetScream\PetScreamAspNET.DataAccessLayer.Repository\obj\Debug\netcoreapp2.1\PetScreamAspNET.DataAccessLayer.Repository.pdb

@@ -1,0 +1,9 @@
+C:\Users\marin\OneDrive\Documente\GitHub\PetScream\PetScreamAspNET.Common\bin\Debug\netcoreapp2.1\PetScreamAspNET.Common.deps.json
+C:\Users\marin\OneDrive\Documente\GitHub\PetScream\PetScreamAspNET.Common\bin\Debug\netcoreapp2.1\PetScreamAspNET.Common.dll
+C:\Users\marin\OneDrive\Documente\GitHub\PetScream\PetScreamAspNET.Common\bin\Debug\netcoreapp2.1\PetScreamAspNET.Common.pdb
+C:\Users\marin\OneDrive\Documente\GitHub\PetScream\PetScreamAspNET.Common\obj\Debug\netcoreapp2.1\PetScreamAspNET.Common.csprojAssemblyReference.cache
+C:\Users\marin\OneDrive\Documente\GitHub\PetScream\PetScreamAspNET.Common\obj\Debug\netcoreapp2.1\PetScreamAspNET.Common.AssemblyInfoInputs.cache
+C:\Users\marin\OneDrive\Documente\GitHub\PetScream\PetScreamAspNET.Common\obj\Debug\netcoreapp2.1\PetScreamAspNET.Common.AssemblyInfo.cs
+C:\Users\marin\OneDrive\Documente\GitHub\PetScream\PetScreamAspNET.Common\obj\Debug\netcoreapp2.1\PetScreamAspNET.Common.csproj.CoreCompileInputs.cache
+C:\Users\marin\OneDrive\Documente\GitHub\PetScream\PetScreamAspNET.Common\obj\Debug\netcoreapp2.1\PetScreamAspNET.Common.dll
+C:\Users\marin\OneDrive\Documente\GitHub\PetScream\PetScreamAspNET.Common\obj\Debug\netcoreapp2.1\PetScreamAspNET.Common.pdb
