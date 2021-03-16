@@ -2667,6 +2667,15 @@
           "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {}
         }
       },
+      "NLog/4.7.8": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/NLog.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/NLog.dll": {}
+        }
+      },
       "Remotion.Linq/2.2.0": {
         "type": "package",
         "dependencies": {
@@ -4432,9 +4441,43 @@
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         }
       },
+      "PetScreamAspNET.BusinessLogicLayer.Repository/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.1",
+        "dependencies": {
+          "PetScreamAspNET.Common": "1.0.0",
+          "PetScreamAspNET.DataAccessLayer.Domain": "1.0.0",
+          "PetScreamAspNET.DataAccessLayer.Repository": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/PetScreamAspNET.BusinessLogicLayer.Repository.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PetScreamAspNET.BusinessLogicLayer.Repository.dll": {}
+        }
+      },
+      "PetScreamAspNET.BusinessLogicLayer.Services/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.1",
+        "dependencies": {
+          "PetScreamAspNET.BusinessLogicLayer.Repository": "1.0.0",
+          "PetScreamAspNET.Common": "1.0.0",
+          "PetScreamAspNET.DataAccessLayer.Domain": "1.0.0",
+          "PetScreamAspNET.DataAccessLayer.Repository": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/PetScreamAspNET.BusinessLogicLayer.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PetScreamAspNET.BusinessLogicLayer.Services.dll": {}
+        }
+      },
       "PetScreamAspNET.Common/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.1",
+        "dependencies": {
+          "NLog": "4.7.8"
+        },
         "compile": {
           "bin/placeholder/PetScreamAspNET.Common.dll": {}
         },
@@ -7315,6 +7358,39 @@
         "lib/netstandard1.3/Newtonsoft.Json.Bson.xml",
         "newtonsoft.json.bson.1.0.1.nupkg.sha512",
         "newtonsoft.json.bson.nuspec"
+      ]
+    },
+    "NLog/4.7.8": {
+      "sha512": "G/TQI32O1tf0USZwsz8/uxPSR/hgbesuB7A5PHU/yWkhWQNVr4OriNWO/ImE3NiSzAPCt1UaUFE51+eHQmZPQg==",
+      "type": "package",
+      "path": "nlog/4.7.8",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/monoandroid44/NLog.dll",
+        "lib/monoandroid44/NLog.xml",
+        "lib/net35/NLog.dll",
+        "lib/net35/NLog.xml",
+        "lib/net40-client/NLog.dll",
+        "lib/net40-client/NLog.xml",
+        "lib/net45/NLog.dll",
+        "lib/net45/NLog.xml",
+        "lib/netstandard1.3/NLog.dll",
+        "lib/netstandard1.3/NLog.xml",
+        "lib/netstandard1.5/NLog.dll",
+        "lib/netstandard1.5/NLog.xml",
+        "lib/netstandard2.0/NLog.dll",
+        "lib/netstandard2.0/NLog.xml",
+        "lib/sl4/NLog.dll",
+        "lib/sl4/NLog.xml",
+        "lib/sl5/NLog.dll",
+        "lib/sl5/NLog.xml",
+        "lib/wp8/NLog.dll",
+        "lib/wp8/NLog.xml",
+        "lib/xamarinios10/NLog.dll",
+        "lib/xamarinios10/NLog.xml",
+        "nlog.4.7.8.nupkg.sha512",
+        "nlog.nuspec"
       ]
     },
     "Remotion.Linq/2.2.0": {
@@ -12083,6 +12159,16 @@
         "system.xml.xpath.xdocument.nuspec"
       ]
     },
+    "PetScreamAspNET.BusinessLogicLayer.Repository/1.0.0": {
+      "type": "project",
+      "path": "../PetScreamAspNET.BusinessLogicLayer.Repository/PetScreamAspNET.BusinessLogicLayer.Repository.csproj",
+      "msbuildProject": "../PetScreamAspNET.BusinessLogicLayer.Repository/PetScreamAspNET.BusinessLogicLayer.Repository.csproj"
+    },
+    "PetScreamAspNET.BusinessLogicLayer.Services/1.0.0": {
+      "type": "project",
+      "path": "../PetScreamAspNET.BusinessLogicLayer.Services/PetScreamAspNET.BusinessLogicLayer.Services.csproj",
+      "msbuildProject": "../PetScreamAspNET.BusinessLogicLayer.Services/PetScreamAspNET.BusinessLogicLayer.Services.csproj"
+    },
     "PetScreamAspNET.Common/1.0.0": {
       "type": "project",
       "path": "../PetScreamAspNET.Common/PetScreamAspNET.Common.csproj",
@@ -12108,6 +12194,7 @@
       "Microsoft.EntityFrameworkCore.SqlServer >= 2.1.8",
       "Microsoft.EntityFrameworkCore.Tools >= 2.1.8",
       "Microsoft.NETCore.App >= 2.1.0",
+      "PetScreamAspNET.BusinessLogicLayer.Services >= 1.0.0",
       "PetScreamAspNET.Common >= 1.0.0",
       "PetScreamAspNET.DataAccessLayer.Domain >= 1.0.0",
       "PetScreamAspNET.DataAccessLayer.Repository >= 1.0.0",
@@ -12145,6 +12232,9 @@
         "netcoreapp2.1": {
           "targetAlias": "netcoreapp2.1",
           "projectReferences": {
+            "C:\\Users\\marin\\OneDrive\\Documente\\GitHub\\PetScream\\PetScreamAspNET.BusinessLogicLayer.Services\\PetScreamAspNET.BusinessLogicLayer.Services.csproj": {
+              "projectPath": "C:\\Users\\marin\\OneDrive\\Documente\\GitHub\\PetScream\\PetScreamAspNET.BusinessLogicLayer.Services\\PetScreamAspNET.BusinessLogicLayer.Services.csproj"
+            },
             "C:\\Users\\marin\\OneDrive\\Documente\\GitHub\\PetScream\\PetScreamAspNET.Common\\PetScreamAspNET.Common.csproj": {
               "projectPath": "C:\\Users\\marin\\OneDrive\\Documente\\GitHub\\PetScream\\PetScreamAspNET.Common\\PetScreamAspNET.Common.csproj"
             },

@@ -4,9 +4,9 @@ using System;
 
 namespace PetScreamAspNET.DataAccessLayer.Repository
 {
-    public class PetSscreamDbContext: DbContext
+    public class PetScreamDbContext: DbContext
     {
-        public PetSscreamDbContext(DbContextOptions<PetSscreamDbContext> context) : base(context)
+        public PetScreamDbContext(DbContextOptions<PetScreamDbContext> context) : base(context)
         {
 
         }

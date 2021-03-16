@@ -12,6 +12,8 @@ namespace PetScreamAspNET.DataAccessLayer.Domain.Domain
         public string Name { get; set; }
         public string Password { get; set; }
         public string Phone { get; set; }
+        public string AccessToken { get; set; }
+        public DateTime? AccessTokenExp { get; set; }
         public ICollection<Post> Posts { get; set; }
     }
 }

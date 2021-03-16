@@ -8,7 +8,7 @@ using PetScreamAspNET.DataAccessLayer.Repository;
 
 namespace PetScreamAspNET.DataAccessLayer.Repository.Migrations
 {
-    [DbContext(typeof(PetSscreamDbContext))]
+    [DbContext(typeof(PetScreamDbContext))]
     partial class PetSscreamDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
@@ -79,6 +79,10 @@ namespace PetScreamAspNET.DataAccessLayer.Repository.Migrations
                 {
                     b.Property<string>("Email")
                         .ValueGeneratedOnAdd();
+
+                    b.Property<string>("AccessToken");
+
+                    b.Property<DateTime?>("AccessTokenExp");
 
                     b.Property<string>("Name");
 

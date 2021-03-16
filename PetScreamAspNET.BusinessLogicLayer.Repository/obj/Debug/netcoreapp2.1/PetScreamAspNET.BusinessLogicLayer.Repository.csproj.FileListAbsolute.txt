@@ -1,0 +1,16 @@
+C:\Users\marin\OneDrive\Documente\GitHub\PetScream\PetScreamAspNET.BusinessLogicLayer.Repository\bin\Debug\netcoreapp2.1\PetScreamAspNET.BusinessLogicLayer.Repository.deps.json
+C:\Users\marin\OneDrive\Documente\GitHub\PetScream\PetScreamAspNET.BusinessLogicLayer.Repository\bin\Debug\netcoreapp2.1\PetScreamAspNET.BusinessLogicLayer.Repository.dll
+C:\Users\marin\OneDrive\Documente\GitHub\PetScream\PetScreamAspNET.BusinessLogicLayer.Repository\bin\Debug\netcoreapp2.1\PetScreamAspNET.BusinessLogicLayer.Repository.pdb
+C:\Users\marin\OneDrive\Documente\GitHub\PetScream\PetScreamAspNET.BusinessLogicLayer.Repository\bin\Debug\netcoreapp2.1\PetScreamAspNET.Common.dll
+C:\Users\marin\OneDrive\Documente\GitHub\PetScream\PetScreamAspNET.BusinessLogicLayer.Repository\bin\Debug\netcoreapp2.1\PetScreamAspNET.DataAccessLayer.Domain.dll
+C:\Users\marin\OneDrive\Documente\GitHub\PetScream\PetScreamAspNET.BusinessLogicLayer.Repository\bin\Debug\netcoreapp2.1\PetScreamAspNET.DataAccessLayer.Repository.dll
+C:\Users\marin\OneDrive\Documente\GitHub\PetScream\PetScreamAspNET.BusinessLogicLayer.Repository\bin\Debug\netcoreapp2.1\PetScreamAspNET.Common.pdb
+C:\Users\marin\OneDrive\Documente\GitHub\PetScream\PetScreamAspNET.BusinessLogicLayer.Repository\bin\Debug\netcoreapp2.1\PetScreamAspNET.DataAccessLayer.Domain.pdb
+C:\Users\marin\OneDrive\Documente\GitHub\PetScream\PetScreamAspNET.BusinessLogicLayer.Repository\bin\Debug\netcoreapp2.1\PetScreamAspNET.DataAccessLayer.Repository.pdb
+C:\Users\marin\OneDrive\Documente\GitHub\PetScream\PetScreamAspNET.BusinessLogicLayer.Repository\obj\Debug\netcoreapp2.1\PetScreamAspNET.BusinessLogicLayer.Repository.csprojAssemblyReference.cache
+C:\Users\marin\OneDrive\Documente\GitHub\PetScream\PetScreamAspNET.BusinessLogicLayer.Repository\obj\Debug\netcoreapp2.1\PetScreamAspNET.BusinessLogicLayer.Repository.AssemblyInfoInputs.cache
+C:\Users\marin\OneDrive\Documente\GitHub\PetScream\PetScreamAspNET.BusinessLogicLayer.Repository\obj\Debug\netcoreapp2.1\PetScreamAspNET.BusinessLogicLayer.Repository.AssemblyInfo.cs
+C:\Users\marin\OneDrive\Documente\GitHub\PetScream\PetScreamAspNET.BusinessLogicLayer.Repository\obj\Debug\netcoreapp2.1\PetScreamAspNET.BusinessLogicLayer.Repository.csproj.CoreCompileInputs.cache
+C:\Users\marin\OneDrive\Documente\GitHub\PetScream\PetScreamAspNET.BusinessLogicLayer.Repository\obj\Debug\netcoreapp2.1\PetScreamAspNET.BusinessLogicLayer.Repository.csproj.CopyComplete
+C:\Users\marin\OneDrive\Documente\GitHub\PetScream\PetScreamAspNET.BusinessLogicLayer.Repository\obj\Debug\netcoreapp2.1\PetScreamAspNET.BusinessLogicLayer.Repository.dll
+C:\Users\marin\OneDrive\Documente\GitHub\PetScream\PetScreamAspNET.BusinessLogicLayer.Repository\obj\Debug\netcoreapp2.1\PetScreamAspNET.BusinessLogicLayer.Repository.pdb

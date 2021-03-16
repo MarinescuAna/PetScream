@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PetScreamAspNET.Common\PetScreamAspNET.Common.csproj" />
+    <ProjectReference Include="..\PetScreamAspNET.DataAccessLayer.Domain\PetScreamAspNET.DataAccessLayer.Domain.csproj" />
+    <ProjectReference Include="..\PetScreamAspNET.DataAccessLayer.Repository\PetScreamAspNET.DataAccessLayer.Repository.csproj" />
+  </ItemGroup>
+
+</Project>

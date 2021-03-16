@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetScreamAspNET.DataAccessL
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetScreamAspNET.Common", "..\PetScreamAspNET.Common\PetScreamAspNET.Common.csproj", "{EDE98D89-C2EB-44C7-B72C-AD2E1A2FD00B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetScreamAspNET.BusinessLogicLayer.Services", "..\PetScreamAspNET.BusinessLogicLayer.Services\PetScreamAspNET.BusinessLogicLayer.Services.csproj", "{6010CAE4-37B9-4D30-B8DA-AEDC5FEC8092}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetScreamAspNET.BusinessLogicLayer.Repository", "..\PetScreamAspNET.BusinessLogicLayer.Repository\PetScreamAspNET.BusinessLogicLayer.Repository.csproj", "{AEA6B8A7-AD96-47BC-8CC6-3C510EAD2C14}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{EDE98D89-C2EB-44C7-B72C-AD2E1A2FD00B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EDE98D89-C2EB-44C7-B72C-AD2E1A2FD00B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EDE98D89-C2EB-44C7-B72C-AD2E1A2FD00B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6010CAE4-37B9-4D30-B8DA-AEDC5FEC8092}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6010CAE4-37B9-4D30-B8DA-AEDC5FEC8092}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6010CAE4-37B9-4D30-B8DA-AEDC5FEC8092}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6010CAE4-37B9-4D30-B8DA-AEDC5FEC8092}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AEA6B8A7-AD96-47BC-8CC6-3C510EAD2C14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEA6B8A7-AD96-47BC-8CC6-3C510EAD2C14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEA6B8A7-AD96-47BC-8CC6-3C510EAD2C14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEA6B8A7-AD96-47BC-8CC6-3C510EAD2C14}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

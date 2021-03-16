@@ -31,6 +31,7 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "2.1.8",
           "Microsoft.EntityFrameworkCore.Tools": "2.1.8",
           "Microsoft.NETCore.App": "2.1.0",
+          "PetScreamAspNET.BusinessLogicLayer.Services": "1.0.0",
           "PetScreamAspNET.Common": "1.0.0",
           "PetScreamAspNET.DataAccessLayer.Domain": "1.0.0",
           "PetScreamAspNET.DataAccessLayer.Repository": "1.0.0",
@@ -149,6 +150,17 @@
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.OpenApi.dll": {}
+        }
+      },
+      "NLog/4.7.8": {
+        "runtime": {
+          "lib/netstandard2.0/NLog.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.7.8.12686"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/NLog.dll": {}
         }
       },
       "Remotion.Linq/2.2.0": {
@@ -308,7 +320,37 @@
           "lib/netstandard2.0/System.Text.Json.dll": {}
         }
       },
+      "PetScreamAspNET.BusinessLogicLayer.Repository/1.0.0": {
+        "dependencies": {
+          "PetScreamAspNET.Common": "1.0.0",
+          "PetScreamAspNET.DataAccessLayer.Domain": "1.0.0",
+          "PetScreamAspNET.DataAccessLayer.Repository": "1.0.0"
+        },
+        "runtime": {
+          "PetScreamAspNET.BusinessLogicLayer.Repository.dll": {}
+        },
+        "compile": {
+          "PetScreamAspNET.BusinessLogicLayer.Repository.dll": {}
+        }
+      },
+      "PetScreamAspNET.BusinessLogicLayer.Services/1.0.0": {
+        "dependencies": {
+          "PetScreamAspNET.BusinessLogicLayer.Repository": "1.0.0",
+          "PetScreamAspNET.Common": "1.0.0",
+          "PetScreamAspNET.DataAccessLayer.Domain": "1.0.0",
+          "PetScreamAspNET.DataAccessLayer.Repository": "1.0.0"
+        },
+        "runtime": {
+          "PetScreamAspNET.BusinessLogicLayer.Services.dll": {}
+        },
+        "compile": {
+          "PetScreamAspNET.BusinessLogicLayer.Services.dll": {}
+        }
+      },
       "PetScreamAspNET.Common/1.0.0": {
+        "dependencies": {
+          "NLog": "4.7.8"
+        },
         "runtime": {
           "PetScreamAspNET.Common.dll": {}
         },
@@ -3422,6 +3464,13 @@
       "path": "microsoft.openapi/1.2.3",
       "hashPath": "microsoft.openapi.1.2.3.nupkg.sha512"
     },
+    "NLog/4.7.8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-G/TQI32O1tf0USZwsz8/uxPSR/hgbesuB7A5PHU/yWkhWQNVr4OriNWO/ImE3NiSzAPCt1UaUFE51+eHQmZPQg==",
+      "path": "nlog/4.7.8",
+      "hashPath": "nlog.4.7.8.nupkg.sha512"
+    },
     "Remotion.Linq/2.2.0": {
       "type": "package",
       "serviceable": true,
@@ -3505,6 +3554,16 @@
       "sha512": "sha512-4F8Xe+JIkVoDJ8hDAZ7HqLkjctN/6WItJIzQaifBwClC7wmoLSda/Sv2i6i1kycqDb3hWF4JCVbpAweyOKHEUA==",
       "path": "system.text.json/4.6.0",
       "hashPath": "system.text.json.4.6.0.nupkg.sha512"
+    },
+    "PetScreamAspNET.BusinessLogicLayer.Repository/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PetScreamAspNET.BusinessLogicLayer.Services/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "PetScreamAspNET.Common/1.0.0": {
       "type": "project",

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "DbB5P66aIrJEHC2L1aYqDRRqlQ3p02dTsEVZ44l9yps2lULDQfuyGUfuIvKdbKfEzE91CX2IfSic3oswaMhDjg==",
+  "dgSpecHash": "bqEEJbjTAtCIZmVjjPR3TvS4+/+JlzYMTEisModJZyS8YFl9LqRIWoyhXWBj9DERcFD7QXqrsFYkYeJZeTWVMw==",
   "success": true,
   "projectFilePath": "C:\\Users\\marin\\OneDrive\\Documente\\GitHub\\PetScream\\PetScreamAspNET.Common\\PetScreamAspNET.Common.csproj",
   "expectedPackageFiles": [
@@ -10,7 +10,8 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.dotnethostresolver\\2.1.0\\microsoft.netcore.dotnethostresolver.2.1.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\2.1.0\\microsoft.netcore.platforms.2.1.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.targets\\2.1.0\\microsoft.netcore.targets.2.1.0.nupkg.sha512",
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\marin\\.nuget\\packages\\nlog\\4.7.8\\nlog.4.7.8.nupkg.sha512"
   ],
   "logs": []
 }

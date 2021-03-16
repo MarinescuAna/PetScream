@@ -22,6 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\PetScreamAspNET.BusinessLogicLayer.Services\PetScreamAspNET.BusinessLogicLayer.Services.csproj" />
     <ProjectReference Include="..\PetScreamAspNET.Common\PetScreamAspNET.Common.csproj" />
     <ProjectReference Include="..\PetScreamAspNET.DataAccessLayer.Domain\PetScreamAspNET.DataAccessLayer.Domain.csproj" />
     <ProjectReference Include="..\PetScreamAspNET.DataAccessLayer.Repository\PetScreamAspNET.DataAccessLayer.Repository.csproj" />

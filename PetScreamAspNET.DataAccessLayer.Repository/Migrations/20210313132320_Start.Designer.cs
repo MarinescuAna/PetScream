@@ -9,7 +9,7 @@ using PetScreamAspNET.DataAccessLayer.Repository;
 
 namespace PetScreamAspNET.DataAccessLayer.Repository.Migrations
 {
-    [DbContext(typeof(PetSscreamDbContext))]
+    [DbContext(typeof(PetScreamDbContext))]
     [Migration("20210313132320_Start")]
     partial class Start
     {

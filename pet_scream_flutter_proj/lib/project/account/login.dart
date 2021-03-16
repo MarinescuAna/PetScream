@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:pet_scream_flutter_proj/models/login-model.dart';
+import 'package:pet_scream_flutter_proj/services/user_service.dart';
+
+import '../../locator.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -7,7 +11,8 @@ class Login extends StatefulWidget {
 
 class _LoginState extends State<Login> {
   bool _isLoading = false;
-
+  Future<String> myFuture;
+  UserService _userService=locator<UserService>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -107,29 +112,10 @@ class _LoginState extends State<Login> {
     );
   }
   signIn(String email, pass) async {
-    /* SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
-    Map data = {
-      'email': email,
-      'password': pass
-    };
-    var jsonResponse = null;
-    var response = await http.post("YOUR_BASE_URL", body: data);
-    if(response.statusCode == 200) {
-      jsonResponse = json.decode(response.body);
-      if(jsonResponse != null) {
-        setState(() {
-          _isLoading = false;
-        });
-        sharedPreferences.setString("token", jsonResponse['token']);
-        Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (BuildContext context) => MainPage()), (Route<dynamic> route) => false);
-      }
-    }
-    else {
-      setState(() {
-        _isLoading = false;
-      });
-      print(response.body);
-    }
-  }*/
+   myFuture=_userService.loginUser(UserLogin(
+       email:email,
+       password: pass)).then(
+           (value) => null
+   );
   }
 }

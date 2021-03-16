@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "lEQP2vlQwQKtz+b8kkrQUkqDXcONIxx+TzvkudZMipnj8abaAGJRgUsnAGfCgoVuFP+xjcg6bewqBucKgr6vQg==",
+  "dgSpecHash": "Gsad9GNqeZvJMHH8LQmR6wRyrFq+CoU2ef07gB5Kx6Uu9WKv8KoUmBXQ4p/0nvEbXcU+WjdqIpFmhg00DiIXig==",
   "success": true,
   "projectFilePath": "C:\\Users\\marin\\OneDrive\\Documente\\GitHub\\PetScream\\PetScreamAspNET\\PetScreamAspNET.csproj",
   "expectedPackageFiles": [
@@ -175,6 +175,7 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\newtonsoft.json\\11.0.2\\newtonsoft.json.11.0.2.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\newtonsoft.json.bson\\1.0.1\\newtonsoft.json.bson.1.0.1.nupkg.sha512",
+    "C:\\Users\\marin\\.nuget\\packages\\nlog\\4.7.8\\nlog.4.7.8.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\remotion.linq\\2.2.0\\remotion.linq.2.2.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
