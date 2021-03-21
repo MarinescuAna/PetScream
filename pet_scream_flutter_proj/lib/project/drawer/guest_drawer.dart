@@ -2,9 +2,6 @@
 import 'package:flutter/material.dart';
 import 'package:pet_scream_flutter_proj/project/account/login.dart';
 import 'package:pet_scream_flutter_proj/project/account/register.dart';
-import 'package:photo_view/photo_view.dart';
-
-import '../posts.dart';
 
 class NoAccountUI extends StatelessWidget{
 
