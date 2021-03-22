@@ -18,7 +18,7 @@ class UserService extends HttpService{
       if( response.statusCode ==  404){
         var aux = jsonDecode( response.body );
 
-        return JWTToken.forJson(aux["Error"], DateTime.now());
+        return JWTToken.forJson(aux["Error"], DateTime.now().toString());
       }
       throw Exception(response.body);
     }
@@ -32,7 +32,7 @@ class UserService extends HttpService{
       if( response.statusCode ==  404){
         var aux = jsonDecode( response.body );
 
-        return JWTToken.forJson(aux["Error"], DateTime.now());
+        return JWTToken.forJson(aux["Error"], DateTime.now().toString());
       }
       throw Exception(response.body);
     }

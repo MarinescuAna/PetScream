@@ -3,7 +3,9 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:petscream_flutter_app/singleton/singleton_keeper.dart';
 import 'package:petscream_flutter_app/views/drawer/guest_drawer.dart';
+import 'package:petscream_flutter_app/views/drawer/logged_drawer.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -32,7 +34,7 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
         ),
-        drawer: NoAccountUI()
+        drawer: SingletonKeeper.IsLogged()==false? NoAccountUI():AccountUI()
        // drawer: AccountUI()
     );
   }

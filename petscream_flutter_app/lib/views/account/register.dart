@@ -1,7 +1,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:petscream_flutter_app/locator/locator.dart';
+import 'package:petscream_flutter_app/models/register_model.dart';
 import 'package:petscream_flutter_app/services/user_service.dart';
+import 'package:petscream_flutter_app/singleton/singleton_keeper.dart';
 
 class Register extends StatefulWidget {
   @override
@@ -144,13 +146,15 @@ class _RegisterState extends State<Register> {
                       ? null
                       : () {
                     setState(() {
-                    /*  myFuture = _userService.registerUser(UserRegister(
+                      myFuture = _userService.registerUser(UserRegister(
                           email: emailController.text,
                           password: passwordController.text,
                           phone: phoneController.text,
-                          name: nameController.text)).then((value) async {
-                        var myToken = Provider.of<JWTToken>(context);
-                      });*/
+                          name: nameController.text)).then(
+                            (value) async {
+                              SingletonKeeper.SetToken(value.token);
+                            }
+                      );
                     });
                   },
                   child:  Text("Register", style: TextStyle(color: Colors.white70)),

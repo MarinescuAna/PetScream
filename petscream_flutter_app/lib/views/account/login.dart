@@ -1,5 +1,10 @@
 
 import 'package:flutter/material.dart';
+import 'package:petscream_flutter_app/locator/locator.dart';
+import 'package:petscream_flutter_app/models/login_model.dart';
+import 'package:petscream_flutter_app/services/user_service.dart';
+import 'package:petscream_flutter_app/singleton/singleton_keeper.dart';
+import 'package:petscream_flutter_app/views/home/home.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -11,7 +16,7 @@ class _LoginState extends State<Login> {
   final TextEditingController passwordController = new TextEditingController();
   Future<String> myFuture;
   final _formKey = GlobalKey<FormState>();
- // UserService _userService=locator<UserService>();
+  UserService _userService=locator<UserService>();
 
   @override
   Widget build(BuildContext context) {
@@ -101,11 +106,17 @@ class _LoginState extends State<Login> {
                       ? null
                       : () {
                     setState(() {
-                      /*myFuture=_userService.loginUser(UserLogin(
-                          email:email,
-                          password: pass)).then(
-                              (value) => null
-                      );*/
+                      myFuture=_userService.loginUser(UserLogin(
+                          email:emailController.text,
+                          password: passwordController.text)).then(
+                              (value) async {
+                            SingletonKeeper.SetToken(value.token);
+                            Navigator.of(context).pop();
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (BuildContext context) => HomePage()
+                            ));
+                          }
+                      );
                     });
                   },
                   child:  Text("Login", style: TextStyle(color: Colors.white70)),

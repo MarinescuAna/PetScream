@@ -1,5 +1,6 @@
-
 import 'package:flutter/material.dart';
+import 'package:petscream_flutter_app/singleton/singleton_keeper.dart';
+import 'package:petscream_flutter_app/views/home/home.dart';
 
 class AccountUI extends StatelessWidget {
   @override
@@ -12,10 +13,7 @@ class AccountUI extends StatelessWidget {
                   shape: BoxShape.rectangle,
                   image: DecorationImage(
                       image: AssetImage("images/logoPetScream.png"),
-                      fit: BoxFit.fill
-                  )
-              )
-          ),
+                      fit: BoxFit.fill))),
           ListTile(
             title: Text('Home'),
             trailing: Icon(Icons.home),
@@ -25,17 +23,21 @@ class AccountUI extends StatelessWidget {
             trailing: Icon(Icons.add_to_photos),
             onTap: () {
               Navigator.of(context).pop();
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                //builder: (BuildContext context) => Post()
-                )
-              );
+              Navigator.of(context).push(MaterialPageRoute(
+                  //builder: (BuildContext context) => Post()
+                  ));
             },
           ),
           ListTile(
-            title: Text('Logout'),
-            trailing: Icon(Icons.logout),
-          ),
+              title: Text('Logout'),
+              trailing: Icon(Icons.logout),
+              onTap: () {
+                SingletonKeeper.SetToken(null);
+                Navigator.of(context).pop();
+                Navigator.of(context).push(MaterialPageRoute(
+                  builder: (BuildContext context) => HomePage()
+                ));
+              }),
         ],
       ),
     );
