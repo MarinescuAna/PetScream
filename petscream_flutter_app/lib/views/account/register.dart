@@ -4,6 +4,7 @@ import 'package:petscream_flutter_app/locator/locator.dart';
 import 'package:petscream_flutter_app/models/register_model.dart';
 import 'package:petscream_flutter_app/services/user_service.dart';
 import 'package:petscream_flutter_app/singleton/singleton_keeper.dart';
+import 'package:petscream_flutter_app/views/home/home.dart';
 
 class Register extends StatefulWidget {
   @override
@@ -153,6 +154,10 @@ class _RegisterState extends State<Register> {
                           name: nameController.text)).then(
                             (value) async {
                               SingletonKeeper.SetToken(value.token);
+                              Navigator.of(context).pop();
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (BuildContext context) => HomePage()
+                              ));
                             }
                       );
                     });
