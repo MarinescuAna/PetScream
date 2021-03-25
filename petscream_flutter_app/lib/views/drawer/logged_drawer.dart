@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:petscream_flutter_app/singleton/singleton_keeper.dart';
 import 'package:petscream_flutter_app/views/home/home.dart';
+import 'package:petscream_flutter_app/views/posts/insert_post.dart';
 
 class AccountUI extends StatelessWidget {
   @override
@@ -24,8 +25,8 @@ class AccountUI extends StatelessWidget {
             onTap: () {
               Navigator.of(context).pop();
               Navigator.of(context).push(MaterialPageRoute(
-                  //builder: (BuildContext context) => Post()
-                  ));
+                  builder: (BuildContext context) => InsertPost())
+              );
             },
           ),
           ListTile(

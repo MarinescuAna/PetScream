@@ -36,6 +36,7 @@ namespace PetScreamAspNET
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IAdService, AdService>();
 
             //Session
             services.AddSession(options => {

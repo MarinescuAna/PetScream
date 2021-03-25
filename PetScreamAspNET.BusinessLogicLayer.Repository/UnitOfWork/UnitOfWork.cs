@@ -14,11 +14,24 @@ namespace PetScreamAspNET.BusinessLogicLayer.Repository.UnitOfWork
 
         protected readonly PetScreamDbContext context;
         private IUserRepo userRepository;
+        private IAdRepo adRepository;
         private readonly ILoggerService _loggerService;
         public UnitOfWork(PetScreamDbContext ctx, ILoggerService loggerService)
         {
             context = ctx;
             _loggerService = loggerService;
+        }
+        public IAdRepo AdRepository
+        {
+            get
+            {
+                if (adRepository == null)
+                {
+                    adRepository = new AdRepo(context, _loggerService);
+                }
+
+                return adRepository;
+            }
         }
         public IUserRepo UserRepository
         {

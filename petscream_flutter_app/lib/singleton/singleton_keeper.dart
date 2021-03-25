@@ -11,7 +11,9 @@ class SingletonKeeper {
   static void SetToken(String token){
     _token=token;
   }
-
+  static String GetToken(){
+    return _token;
+  }
   static bool IsLogged(){
     return _token!=null;
   }

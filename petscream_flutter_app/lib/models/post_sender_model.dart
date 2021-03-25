@@ -6,6 +6,7 @@ class PostSender{
   String binaryContentImage;
   String imageName;
   String extentionImage;
+  String lostDatetime;
 
   PostSender({
     this.title,
@@ -14,7 +15,8 @@ class PostSender{
     this.lostPlaceAddress,
     this.binaryContentImage,
     this.imageName,
-    this.extentionImage
+    this.extentionImage,
+    this.lostDatetime
   });
 
   Map<String, dynamic> toJson(){
@@ -26,6 +28,7 @@ class PostSender{
       "binaryContentImage": binaryContentImage,
       "imageName": imageName,
       "extentionImage": extentionImage,
+      "lostDatetime":lostDatetime
     };
   }
 }

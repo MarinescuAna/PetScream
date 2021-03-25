@@ -10,6 +10,7 @@ namespace PetScreamAspNET.BusinessLogicLayer.Repository.UnitOfWork
     {
         Task<bool> CommitAsync(string loggDetails);
         IUserRepo UserRepository { get; }
+        IAdRepo AdRepository { get; }
 
     }
 }
