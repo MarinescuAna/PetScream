@@ -32,6 +32,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   http:
   get_it:
+  toast: ^0.1.5
 
 dev_dependencies:
   json_serializable: ^3.3.0

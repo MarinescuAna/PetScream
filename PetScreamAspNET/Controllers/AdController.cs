@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using PetScreamAspNET.BusinessLogicLayer.Services.Interface;
@@ -38,7 +37,7 @@ namespace PetScreamAspNET.Controllers
             Post post = new Post {
                 PostID = Guid.NewGuid(),
                 ImageId = imageId,
-                LostDatetime = DateTime.Parse(insertPostSender.LostDatetime),
+                LostDatetime = insertPostSender.LostDatetime=="null"? DateTime.Now: DateTime.Parse(insertPostSender.LostDatetime),
                 Status = Status.Lost,
                 LostPlaceAddress = insertPostSender.LostPlaceAddress,
                 UserId = ExtractEmailFromJWT(),

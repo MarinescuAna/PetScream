@@ -6,19 +6,16 @@ import 'package:petscream_flutter_app/services/http_service.dart';
 import 'package:petscream_flutter_app/singleton/singleton_keeper.dart';
 
 class AdService extends HttpService {
-  Future<bool> insertAd(PostSender _post) async {
+  Future<String> insertAd(PostSender _post) async {
     var response = await postWithAuthorization('/api/Ad/InsertAd',SingletonKeeper.GetToken(), jsonEncode(_post.toJson()));
     if (response.statusCode == 200) {
-      return true;
+      return "Success";
     } else {
-      if (response.statusCode == 404) {
-        throw Exception(jsonDecode(response.body));
-      }
-      throw Exception(response.body);
+     return response.statusCode.toString();
     }
   }
 
-  Future<List<AdRecModel>> getAds() async{
+  Future<List<AdRecModel>> getAds() async {
     var response = await get('/api/Ad/GetAds');
     if( response.statusCode == 200 ){
       final parsed = jsonDecode(response.body).cast<Map<String, dynamic>>();

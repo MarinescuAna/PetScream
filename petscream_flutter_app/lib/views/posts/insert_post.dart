@@ -7,6 +7,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:petscream_flutter_app/locator/locator.dart';
 import 'package:petscream_flutter_app/models/post_sender_model.dart';
 import 'package:petscream_flutter_app/services/ad_service.dart';
+import 'package:petscream_flutter_app/toast/toaster.dart';
 import 'package:petscream_flutter_app/views/home/home.dart';
 
 class InsertPost extends StatefulWidget {
@@ -214,9 +215,15 @@ class _Insert extends State<InsertPost> {
                     ownerAddress: ownerAddressController.text,
                     lostDatetime: dateLostPet.toString());
                 myFuture = _adService.insertAd(postAd).then((value) async {
-                  Navigator.of(context).pop();
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (BuildContext context) => HomePage()));
+                  if(value=="Success"){
+                    ShowToastComponent.showDialogSuccess(value, context);
+                    Navigator.of(context).pop();
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (BuildContext context) => HomePage()));
+                  }else{
+                    ShowToastComponent.showDialogError(value, context);
+                  }
+
                 });
               });
             },
@@ -271,7 +278,7 @@ class _Insert extends State<InsertPost> {
           padding: EdgeInsets.symmetric(horizontal: 30.0),
           child: dateLostPet == null
               ? Text("When you lost your pet")
-              : Text("$dateLostPet"),
+              : Text(dateLostPet.toString().split(" ")[0]),
         ),
         // ignore: deprecated_member_use
         new RaisedButton(

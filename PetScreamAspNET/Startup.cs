@@ -99,15 +99,15 @@ namespace PetScreamAspNET
             app.UseSwagger();
 
             //Add JWToken to all incoming HTTP Request Header
-            app.Use(async (context, next) =>
-            {
-                var jwToken = context.Session.GetString("Token");
-                if (!string.IsNullOrEmpty(jwToken))
-                {
-                    context.Request.Headers.Add("Authorization", "Bearer " + jwToken);
-                }
-                await next();
-            });
+            _ = app.Use(async (context, next) =>
+              {
+                  string jwToken = context.Session.GetString("Token");
+                  if (!string.IsNullOrEmpty(jwToken))
+                  {
+                      context.Request.Headers.Add("Authorization", "Bearer " + jwToken);
+                  }
+                  await next();
+              });
 
 
             app.UseSwaggerUI(options =>

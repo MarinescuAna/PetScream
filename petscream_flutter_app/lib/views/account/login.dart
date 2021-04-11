@@ -1,9 +1,9 @@
-
 import 'package:flutter/material.dart';
 import 'package:petscream_flutter_app/locator/locator.dart';
 import 'package:petscream_flutter_app/models/login_model.dart';
 import 'package:petscream_flutter_app/services/user_service.dart';
 import 'package:petscream_flutter_app/singleton/singleton_keeper.dart';
+import 'package:petscream_flutter_app/toast/toaster.dart';
 import 'package:petscream_flutter_app/views/home/home.dart';
 
 class Login extends StatefulWidget {
@@ -16,7 +16,7 @@ class _LoginState extends State<Login> {
   final TextEditingController passwordController = new TextEditingController();
   Future<String> myFuture;
   final _formKey = GlobalKey<FormState>();
-  UserService _userService=locator<UserService>();
+  UserService _userService = locator<UserService>();
 
   @override
   Widget build(BuildContext context) {
@@ -33,10 +33,7 @@ class _LoginState extends State<Login> {
           ),
         ),
         child: ListView(
-          children: <Widget>[
-            headerSelection(),
-            textSelection()
-          ],
+          children: <Widget>[headerSelection(), textSelection()],
         ),
       ),
     );
@@ -58,13 +55,12 @@ class _LoginState extends State<Login> {
                     hintText: "Email or phone number",
                     border: UnderlineInputBorder(
                         borderSide: BorderSide(color: Colors.black)),
-                    hintStyle: TextStyle(color: Colors.black)
-                ),
+                    hintStyle: TextStyle(color: Colors.black)),
                 validator: (String value) {
                   if (value == null || value.isEmpty) {
                     return 'Please enter some text';
                   }
-                  if(!validateEmail(value)) {
+                  if (!validateEmail(value)) {
                     return "Invalid email!!";
                   }
                   return null;
@@ -96,36 +92,46 @@ class _LoginState extends State<Login> {
                 },
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 30),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20.0, vertical: 30),
                 child: ElevatedButton(
                   style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all<Color>(Colors.black),
-                    padding: MaterialStateProperty.all<EdgeInsetsGeometry>(EdgeInsets.symmetric(horizontal: 50, vertical: 15)),
+                    backgroundColor:
+                        MaterialStateProperty.all<Color>(Colors.black),
+                    padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
+                        EdgeInsets.symmetric(horizontal: 50, vertical: 15)),
                   ),
-                  onPressed: _formKey.currentState!=null && !_formKey.currentState?.validate()
+                  onPressed: _formKey.currentState != null &&
+                          !_formKey.currentState?.validate()
                       ? null
                       : () {
-                    setState(() {
-                      myFuture=_userService.loginUser(UserLogin(
-                          email:emailController.text,
-                          password: passwordController.text)).then(
-                              (value) async {
-                            SingletonKeeper.SetToken(value.token);
-                            Navigator.of(context).pop();
-                            Navigator.of(context).push(MaterialPageRoute(
-                                builder: (BuildContext context) => HomePage()
-                            ));
-                          }
-                      );
-                    });
-                  },
-                  child:  Text("Login", style: TextStyle(color: Colors.white70)),
+                          setState(() {
+                            myFuture = _userService
+                                .loginUser(UserLogin(
+                                    email: emailController.text,
+                                    password: passwordController.text))
+                                .then((value) async {
+                              if (value.error == null) {
+                                SingletonKeeper.SetToken(value.token);
+                                ShowToastComponent.showDialogSuccess(
+                                    "Success!", context);
+                                Navigator.of(context).pop();
+                                Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (BuildContext context) =>
+                                        HomePage()));
+                              } else {
+                                ShowToastComponent.showDialogError(
+                                    value.error, context);
+                              }
+                            });
+                          });
+                        },
+                  child: Text("Login", style: TextStyle(color: Colors.white70)),
                 ),
               )
             ],
           ),
-        )
-    );
+        ));
   }
 
   Container headerSelection() {
@@ -140,9 +146,9 @@ class _LoginState extends State<Login> {
   }
 
   bool validateEmail(String value) {
-    Pattern pattern =  r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
+    Pattern pattern =
+        r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
     RegExp regex = new RegExp(pattern);
     return (!regex.hasMatch(value)) ? false : true;
   }
-
 }

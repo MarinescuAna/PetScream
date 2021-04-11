@@ -35,7 +35,7 @@ class Ads extends StatelessWidget {
                         itemCount:
                             snapshot.data == null ? 0 : snapshot.data.length,
                         itemBuilder: (BuildContext context, int index) {
-                          return Card(
+                          return snapshot.data == null ? null:Card(
                             color: Colors.grey.shade200,
                               child: ListTile(
                             title: Ad(snapshot.data[index]),

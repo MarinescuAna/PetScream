@@ -34,7 +34,7 @@ namespace PetScreamAspNET.Controllers
 
             if (user == null)
             {
-                return StatusCode(Codes.Number_404, Messages.NoContent_204NoContent);
+                return StatusCode(Codes.Number_404, Messages.InvalidCredentials_404NotFound);
             }
             if (user.Password != credentials.Password)
             {
