@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'PetScream',
+      title: "PetScream",
       theme: ThemeData(
         accentColor: Colors.white70,
         visualDensity: VisualDensity.adaptivePlatformDensity,

@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:petscream_flutter_app/models/ad_rec_model.dart';
 import 'package:petscream_flutter_app/models/post_sender_model.dart';
 import 'package:petscream_flutter_app/services/http_service.dart';
 import 'package:petscream_flutter_app/singleton/singleton_keeper.dart';
@@ -14,6 +15,16 @@ class AdService extends HttpService {
         throw Exception(jsonDecode(response.body));
       }
       throw Exception(response.body);
+    }
+  }
+
+  Future<List<AdRecModel>> getAds() async{
+    var response = await get('/api/Ad/GetAds');
+    if( response.statusCode == 200 ){
+      final parsed = jsonDecode(response.body).cast<Map<String, dynamic>>();
+      return parsed.map<AdRecModel>( (json) => AdRecModel.fromJson(json) ).toList();
+    }else{
+      throw Exception('Failed to load events');
     }
   }
 }

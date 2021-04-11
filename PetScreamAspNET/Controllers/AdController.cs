@@ -7,12 +7,12 @@ using PetScreamAspNET.Common.Utils;
 using PetScreamAspNET.DataAccessLayer.Domain.Domain;
 using PetScreamAspNET.DataAccessLayer.Domain.Model;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace PetScreamAspNET.Controllers
 {
     [Route("api/[controller]")]
-    [Authorize]
     [ApiController]
     public class AdController : BaseController
     {
@@ -25,6 +25,7 @@ namespace PetScreamAspNET.Controllers
 
 
         [HttpPost]
+        // [Authorize]
         [Route("/api/Ad/InsertAd")]
         public async Task<IActionResult> InsertAd(InsertPostSender insertPostSender)
         {
@@ -59,6 +60,39 @@ namespace PetScreamAspNET.Controllers
             }
 
             return StatusCode(Codes.Number_400, Messages.SthWentWrong_400BadRequest);
+        }
+
+        [HttpGet]
+        [Route("/api/Ad/GetAds")]
+        public async Task<IActionResult> GetAds()
+        {
+            var ads = (List<Post>)await _adService.GetAllAdsAsync();
+            var adsSent = new List<AdSent>();
+
+            foreach(var ad in ads)
+            {
+                adsSent.Add(new AdSent
+                {
+                    ContentImage=ad.Image?.Content,
+                    FoundDatetime=ad.FoundDatetime,
+                    FounderAddress=ad.FounderAddress,
+                    FounderName=ad.FounderName,
+                    FounderPhone=ad.FounderPhone,
+                    LostDatetime=ad.LostDatetime,
+                    LostPlaceAddress=ad.LostPlaceAddress,
+                    Name=ad.Owner?.Name,
+                    Title=ad.Title,
+                    OwnerAddress=ad.OwnerAddress,
+                    PetDescription=ad.PetDescription,
+                    Phone=ad.Owner?.Phone,
+                    PostDatetime=ad.PostDatetime,
+                    UserEmail=ad.UserId,
+                    PostID=ad.PostID.ToString(),
+                    Status=ad.Status.ToString()
+                });
+            }
+           
+                return StatusCode(Codes.Number_200, adsSent);
         }
     }
 }

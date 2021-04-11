@@ -9,5 +9,6 @@ namespace PetScreamAspNET.BusinessLogicLayer.Services.Interface
     public interface IAdService
     {
         Task<bool> InsertAdAsync(Post post);
+        Task<IEnumerable<Post>> GetAllAdsAsync();
     }
 }

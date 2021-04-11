@@ -19,5 +19,8 @@ namespace PetScreamAspNET.BusinessLogicLayer.Services.Impl
 
             return await _unitOfWork.CommitAsync("Insert a post into database");
         }
+
+        public async Task<IEnumerable<Post>> GetAllAdsAsync() => await _unitOfWork.AdRepository.GetItemsAsync();
+        
     }
 }

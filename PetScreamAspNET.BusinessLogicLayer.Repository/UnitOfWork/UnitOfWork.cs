@@ -64,7 +64,7 @@ namespace PetScreamAspNET.BusinessLogicLayer.Repository.UnitOfWork
             return false;
         }
 
-        public async void Dispose()
+        public void Dispose()
         {
             context.Dispose();
         }

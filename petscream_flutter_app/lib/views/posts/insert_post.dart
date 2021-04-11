@@ -15,9 +15,8 @@ class InsertPost extends StatefulWidget {
 }
 
 class _Insert extends State<InsertPost> {
-  AdService _adService=locator<AdService>();
+  AdService _adService = locator<AdService>();
   Future<String> myFuture;
-  final _formKey = GlobalKey<FormState>();
   final TextEditingController titleController = new TextEditingController();
   final TextEditingController petDescriptionController =
       new TextEditingController();
@@ -117,101 +116,73 @@ class _Insert extends State<InsertPost> {
 
   Container _textSelection() {
     return Container(
-        padding: EdgeInsets.symmetric(horizontal: 15, vertical: 0),
-        child: Form(
-          key: _formKey,
-          child: Column(
-            children: <Widget>[
-              Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10),
-                child: Row(children: <Widget>[
-                  _showImageButtonPiker(),
-                  _showDateTimePicker()
-                ]),
-              ),
-              _insertSpace(),
-              TextFormField(
-                controller: titleController,
-                cursorColor: Colors.black,
-                style: TextStyle(color: Colors.black),
-                decoration: InputDecoration(
-                    icon: Icon(Icons.title, color: Colors.black),
-                    hintText: "Ad Title",
-                    border: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Colors.black)),
-                    hintStyle: TextStyle(color: Colors.black)),
-                validator: (String value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Please enter some text';
-                  }
-                  return null;
-                },
-              ),
-              _insertSpace(),
-              TextFormField(
-                controller: petDescriptionController,
-                cursorColor: Colors.black,
-                style: TextStyle(color: Colors.black),
-                decoration: InputDecoration(
-                    icon: Icon(Icons.pets, color: Colors.black),
-                    hintText: "What your pet looks like?",
-                    border: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Colors.black)),
-                    hintStyle: TextStyle(color: Colors.black)),
-                validator: (String value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Please enter some text';
-                  }
-                  return null;
-                },
-              ),
-              _insertSpace(),
-              TextFormField(
-                controller: ownerAddressController,
-                cursorColor: Colors.black,
-                style: TextStyle(color: Colors.black),
-                decoration: InputDecoration(
-                    icon: Icon(Icons.location_city, color: Colors.black),
-                    hintText: "Where you can be found?",
-                    border: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Colors.black)),
-                    hintStyle: TextStyle(color: Colors.black)),
-                validator: (String value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Please enter some text';
-                  }
-                  return null;
-                },
-              ),
-              _insertSpace(),
-              TextFormField(
-                controller: lostPlaceController,
-                cursorColor: Colors.black,
-                obscureText: true,
-                style: TextStyle(color: Colors.black),
-                decoration: InputDecoration(
-                  icon: Icon(Icons.not_listed_location, color: Colors.black),
-                  hintText: "Where you lost him?",
-                  border: UnderlineInputBorder(
-                      borderSide: BorderSide(color: Colors.black)),
-                  hintStyle: TextStyle(color: Colors.black),
-                ),
-                validator: (String value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Please enter some text';
-                  }
-                  return null;
-                },
-              ),
-              _insertSpace(),
-              Padding(
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 20.0, vertical: 10),
-                  child: _buttonPost())
-            ],
+      padding: EdgeInsets.symmetric(horizontal: 15, vertical: 0),
+      child: Column(
+        children: <Widget>[
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10),
+            child: Row(children: <Widget>[
+              _showImageButtonPiker(),
+              _showDateTimePicker()
+            ]),
           ),
-        ));
+          _insertSpace(),
+          TextField(
+            controller: titleController,
+            cursorColor: Colors.black,
+            style: TextStyle(color: Colors.black),
+            decoration: InputDecoration(
+                icon: Icon(Icons.title, color: Colors.black),
+                hintText: "Ad Title",
+                border: UnderlineInputBorder(
+                    borderSide: BorderSide(color: Colors.black)),
+                hintStyle: TextStyle(color: Colors.black)),
+          ),
+          _insertSpace(),
+          TextField(
+            controller: petDescriptionController,
+            cursorColor: Colors.black,
+            style: TextStyle(color: Colors.black),
+            decoration: InputDecoration(
+                icon: Icon(Icons.pets, color: Colors.black),
+                hintText: "What your pet looks like?",
+                border: UnderlineInputBorder(
+                    borderSide: BorderSide(color: Colors.black)),
+                hintStyle: TextStyle(color: Colors.black)),
+          ),
+          _insertSpace(),
+          TextField(
+            controller: ownerAddressController,
+            cursorColor: Colors.black,
+            style: TextStyle(color: Colors.black),
+            decoration: InputDecoration(
+                icon: Icon(Icons.location_city, color: Colors.black),
+                hintText: "Where you can be found?",
+                border: UnderlineInputBorder(
+                    borderSide: BorderSide(color: Colors.black)),
+                hintStyle: TextStyle(color: Colors.black)),
+          ),
+          _insertSpace(),
+          TextField(
+            controller: lostPlaceController,
+            cursorColor: Colors.black,
+            style: TextStyle(color: Colors.black),
+            decoration: InputDecoration(
+              icon: Icon(Icons.not_listed_location, color: Colors.black),
+              hintText: "Where you lost him?",
+              border: UnderlineInputBorder(
+                  borderSide: BorderSide(color: Colors.black)),
+              hintStyle: TextStyle(color: Colors.black),
+            ),
+          ),
+          _insertSpace(),
+          Padding(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10),
+              child: _buttonPost())
+        ],
+      ),
+    );
   }
 
   Widget _buttonPost() {
@@ -221,34 +192,32 @@ class _Insert extends State<InsertPost> {
         padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
             EdgeInsets.symmetric(horizontal: 50, vertical: 15)),
       ),
-      onPressed: _formKey.currentState != null &&
-              _formKey.currentState?.validate() &&
+      onPressed: ownerAddressController.text != null &&
+              lostPlaceController.text != null &&
+              petDescriptionController.text != null &&
+              titleController.text != null &&
               dateLostPet != null &&
               _image != null
           ? null
           : () {
               setState(() {
-                var split=_image.path.split('/');
-                Uint8List _CV =  File(_image.path).readAsBytesSync();
+                var split = _image.path.split('/');
+                Uint8List _CV = File(_image.path).readAsBytesSync();
                 String _CV_string = base64Encode(_CV);
                 PostSender postAd = PostSender(
-                  binaryContentImage: _CV_string,
-                  imageName: split[split.length-1].split('.')[0],
-                  extentionImage:  split[split.length-1].split('.')[1],
-                  title: titleController.text,
-                  petDescription: petDescriptionController.text,
-                  lostPlaceAddress: lostPlaceController.text,
-                  ownerAddress: ownerAddressController.text,
-                  lostDatetime: dateLostPet.toString()
-                );
-                  myFuture = _adService.insertAd(postAd).then(
-                                (value) async {
-                              Navigator.of(context).pop();
-                              Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (BuildContext context) => HomePage()
-                              ));
-                            }
-                        );
+                    binaryContentImage: _CV_string,
+                    imageName: split[split.length - 1].split('.')[0],
+                    extentionImage: split[split.length - 1].split('.')[1],
+                    title: titleController.text,
+                    petDescription: petDescriptionController.text,
+                    lostPlaceAddress: lostPlaceController.text,
+                    ownerAddress: ownerAddressController.text,
+                    lostDatetime: dateLostPet.toString());
+                myFuture = _adService.insertAd(postAd).then((value) async {
+                  Navigator.of(context).pop();
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (BuildContext context) => HomePage()));
+                });
               });
             },
       child: Text("Post", style: TextStyle(color: Colors.white70)),
