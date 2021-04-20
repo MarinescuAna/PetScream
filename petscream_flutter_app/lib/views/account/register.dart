@@ -161,7 +161,7 @@ class _RegisterState extends State<Register> {
                         if (value.error == null) {
                           ShowToastComponent.showDialogSuccess(
                               "Success!", context);
-                          SingletonKeeper.SetToken(value.token);
+                          SingletonKeeper.SetToken(value.token,emailController.text);
                           Navigator.of(context).pop();
                           Navigator.of(context).push(MaterialPageRoute(
                               builder: (BuildContext context) =>

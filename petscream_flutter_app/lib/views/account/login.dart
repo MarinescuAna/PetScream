@@ -112,7 +112,7 @@ class _LoginState extends State<Login> {
                                     password: passwordController.text))
                                 .then((value) async {
                               if (value.error == null) {
-                                SingletonKeeper.SetToken(value.token);
+                                SingletonKeeper.SetToken(value.token,emailController.text);
                                 ShowToastComponent.showDialogSuccess(
                                     "Success!", context);
                                 Navigator.of(context).pop();

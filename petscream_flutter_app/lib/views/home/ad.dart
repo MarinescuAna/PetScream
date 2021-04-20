@@ -2,6 +2,8 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:petscream_flutter_app/models/ad_rec_model.dart';
+import 'package:petscream_flutter_app/views/home/ad_page.dart';
+import 'package:petscream_flutter_app/views/home/image.dart';
 import 'package:photo_view/photo_view.dart';
 
 class Ad extends StatelessWidget {
@@ -9,72 +11,20 @@ class Ad extends StatelessWidget {
 
   Ad(this.model);
 
-  var _width;
-  var _heightScaleFactor;
-  var _widthScaleFactor;
-  var _height;
-  var _orientation;
-
   @override
   Widget build(BuildContext context) {
-    _processImageOrientation(context);
     return Column(
       children: [
         _showTitle(),
         _showDate(),
-        _showImage(context),
-        _showDescription(),
-        _showButtom()
+        _showPlace(),
+         ShowImage(model.contentImage),
+        _showButtom(context)
       ],
     );
   }
 
-  void _processImageOrientation(BuildContext context) {
-    _width = MediaQuery.of(context).size.width;
-    _height = MediaQuery.of(context).size.height;
-    _orientation = MediaQuery.of(context).orientation;
-
-    if (_orientation == Orientation.portrait) {
-      _heightScaleFactor = 0.25;
-      _widthScaleFactor = 1.0;
-    } else {
-      _heightScaleFactor = 0.5;
-      _widthScaleFactor = 0.5;
-    }
-  }
-
-  Widget _showImage(BuildContext context) {
-    return GestureDetector(
-      child: Padding(
-        padding: EdgeInsets.all(5.0),
-        child: Container(
-          width: _width * _widthScaleFactor,
-          height: _height * _heightScaleFactor,
-          child: FittedBox(
-            fit: BoxFit.contain,
-            child: FittedBox(
-              fit: BoxFit.contain,
-              child: model.contentImage == null
-                  ? Image.asset("images/noImage.jpg")
-                  : Image.memory(
-                      base64Decode(model.contentImage),
-                      height: 10.0,
-                      width: 10.0,
-                    ),
-            ),
-          ),
-        ),
-      ),
-      onTap: () {
-        Navigator.push(context,
-            MaterialPageRoute(builder: (BuildContext context) {
-          return FullScreenPoster(model.contentImage);
-        }));
-      },
-    );
-  }
-
-  Padding _showButtom() {
+  Padding _showButtom(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 10),
       child: ElevatedButton(
@@ -86,6 +36,11 @@ class Ad extends StatelessWidget {
         child: Text("View",
             style:
                 TextStyle(color: Colors.white70, fontWeight: FontWeight.bold)),
+          onPressed: () {
+            Navigator.of(context).pop();
+            Navigator.of(context).push(
+                MaterialPageRoute(builder: (BuildContext context) => AdPage(model)));
+          }
       ),
     );
   }
@@ -102,9 +57,9 @@ class Ad extends StatelessWidget {
     );
   }
 
-  Text _showDescription() {
-    return Text(
-      model.petDescription,
+  Text _showPlace() {
+    return Text("Place: " +
+      model.lostPlaceAddress,
       textAlign: TextAlign.start,
       style: TextStyle(fontSize: 15.0),
     );
@@ -122,38 +77,11 @@ class Ad extends StatelessWidget {
         Expanded(
           child: Text(
             model.title.toUpperCase() + "  ",
-            style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold),
+            style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
           ),
         )
       ],
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-    );
-  }
-}
-
-class FullScreenPoster extends StatelessWidget {
-  FullScreenPoster(this._poster);
-
-  String _poster;
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        Navigator.pop(context);
-      },
-      child: showImage(_poster, MediaQuery.of(context).size.width,
-          MediaQuery.of(context).size.height),
-    );
-  }
-
-  Container showImage(String image_string, double width, double height) {
-    return Container(
-      width: width,
-      height: height,
-      child: PhotoView(
-        imageProvider: MemoryImage(base64Decode(image_string)),
-      ),
     );
   }
 }

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using PetScreamAspNET.BusinessLogicLayer.Services.Interface;
@@ -24,7 +25,7 @@ namespace PetScreamAspNET.Controllers
 
 
         [HttpPost]
-        // [Authorize]
+        [Authorize]
         [Route("/api/Ad/InsertAd")]
         public async Task<IActionResult> InsertAd(InsertPostSender insertPostSender)
         {
@@ -73,10 +74,6 @@ namespace PetScreamAspNET.Controllers
                 adsSent.Add(new AdSent
                 {
                     ContentImage=ad.Image?.Content,
-                    FoundDatetime=ad.FoundDatetime,
-                    FounderAddress=ad.FounderAddress,
-                    FounderName=ad.FounderName,
-                    FounderPhone=ad.FounderPhone,
                     LostDatetime=ad.LostDatetime,
                     LostPlaceAddress=ad.LostPlaceAddress,
                     Name=ad.Owner?.Name,
@@ -87,11 +84,88 @@ namespace PetScreamAspNET.Controllers
                     PostDatetime=ad.PostDatetime,
                     UserEmail=ad.UserId,
                     PostID=ad.PostID.ToString(),
-                    Status=ad.Status.ToString()
+                    Status=ad.Status.ToString(),
+                    FoundDatetime=ad.FoundDatetime,
+                    FounderAddress=ad.FounderAddress,
+                    FounderName=ad.FounderName,
+                    FounderPhone=ad.FounderPhone
                 });
             }
-           
-                return StatusCode(Codes.Number_200, adsSent);
+
+            adsSent.Sort((u,y) => u.PostDatetime.CompareTo(y.PostDatetime));
+
+            return StatusCode(Codes.Number_200, adsSent);
+        }
+
+        [HttpDelete]
+        [Route("/api/Ad/DeletePost")]
+        public async Task<IActionResult> DeletePost(string postId)
+        {
+            if (string.IsNullOrEmpty(postId))
+            {
+                return StatusCode(Codes.Number_204, Messages.NoContent_204NoContent);
+            }
+
+            var post = await _adService.GetAdByPostIdAsync(Guid.Parse(postId));
+            if (post != null)
+            {
+                if(await _adService.DeleteAdAsync(post))
+                {
+                    return Ok();
+                }
+            }
+
+            return StatusCode(Codes.Number_400, Messages.SthWentWrong_400BadRequest);
+        }
+
+        [HttpPut]
+        [Route("/api/Ad/SentDataFounder")]
+        public async Task<IActionResult> SentDataFounder(FounderModel found)
+        {
+            if (found==null)
+            {
+                return StatusCode(Codes.Number_204, Messages.NoContent_204NoContent);
+            }
+
+            var post = await _adService.GetAdByPostIdAsync(Guid.Parse(found.PostID));
+
+            post.FounderAddress = found.FounderAddress;
+            post.FounderName = found.FounderName;
+            post.FounderPhone = found.FounderPhone;
+            post.FoundDatetime = DateTime.Now;
+
+            if (post != null)
+            {
+                if (await _adService.UpdatePostByPostIdAsync(post))
+                {
+                    return Ok();
+                }
+            }
+
+            return StatusCode(Codes.Number_400, Messages.SthWentWrong_400BadRequest);
+        }
+
+        [HttpPut]
+        [Route("/api/Ad/MarkAsFound")]
+        public async Task<IActionResult> MarkAsFound(string postId)
+        {
+            if (string.IsNullOrEmpty(postId))
+            {
+                return StatusCode(Codes.Number_204, Messages.NoContent_204NoContent);
+            }
+
+            var post = await _adService.GetAdByPostIdAsync(Guid.Parse(postId));
+            post.Status = Status.Found;
+            
+            if (post != null)
+            {
+                if (await _adService.UpdatePostByPostIdAsync(post))
+                {
+                    return Ok();
+                }
+            }
+
+            return StatusCode(Codes.Number_400, Messages.SthWentWrong_400BadRequest);
         }
     }
 }

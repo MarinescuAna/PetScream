@@ -21,6 +21,20 @@ namespace PetScreamAspNET.BusinessLogicLayer.Services.Impl
         }
 
         public async Task<IEnumerable<Post>> GetAllAdsAsync() => await _unitOfWork.AdRepository.GetItemsAsync();
-        
+
+        public async Task<Post> GetAdByPostIdAsync(Guid postId) => await _unitOfWork.AdRepository.GetItemAsync(u => u.PostID == postId); 
+        public async Task<bool> DeleteAdAsync(Post post)
+        {
+            await _unitOfWork.AdRepository.DeleteItemAsync(u => u.PostID == post.PostID, post);
+
+            return await _unitOfWork.CommitAsync("Delete post");
+        }
+
+        public async Task<bool> UpdatePostByPostIdAsync(Post post)
+        {
+            await _unitOfWork.AdRepository.UpdateItemAsync(u => u.PostID == post.PostID, post);
+
+            return await _unitOfWork.CommitAsync("Update post adding the founder");
+        }
     }
 }

@@ -50,6 +50,7 @@ namespace PetScreamAspNET.Controllers
 
             user.AccessTokenExp = DateTime.Parse(jWToken.AccessTokenExpiration);
             HttpContext.Session.SetString("Token", user.AccessToken);
+            HttpContext.Session.SetString("Email", user.Email);
 
             if (await _userService.UpdateUserInformationAsync(user) == true)
             {
@@ -89,6 +90,7 @@ namespace PetScreamAspNET.Controllers
             user.AccessTokenExp = DateTime.Now.AddHours(Codes.Number_2);
             jWToken.AccessTokenExpiration = DateTime.Now.AddHours(Codes.Number_2).ToString();
             HttpContext.Session.SetString("Token", user.AccessToken);
+            HttpContext.Session.SetString("Email", user.Email);
 
             if (await _userService.InsertUserAsync(user) == true)
             {

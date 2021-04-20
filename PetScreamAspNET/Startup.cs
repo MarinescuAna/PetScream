@@ -29,19 +29,27 @@ namespace PetScreamAspNET
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDistributedMemoryCache();
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddDbContext<PetScreamDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddSingleton<ILoggerService, LoggerService>();
-            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IAdService, AdService>();
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
+            services.AddCors(options => options.AddPolicy("Cors", builder =>
+            {
+                builder
+                .AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader();
+            }));
 
             //Session
-            services.AddSession(options => {
-                options.IdleTimeout = TimeSpan.FromMinutes(120);
-            });
+            services.AddSession();
 
             //For Jwt
             var tokenValidationParameter = new TokenValidationParameters()
@@ -108,12 +116,14 @@ namespace PetScreamAspNET
                   }
                   await next();
               });
-
+            app.UseCors("Cors");
 
             app.UseSwaggerUI(options =>
             {
                 options.SwaggerEndpoint("/swagger/v1/swagger.json", "Swagger Demo API");
             });
+
+            app.UseAuthentication();
         }
     }
 }

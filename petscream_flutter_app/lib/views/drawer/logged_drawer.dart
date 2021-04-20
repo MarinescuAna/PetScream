@@ -33,7 +33,7 @@ class AccountUI extends StatelessWidget {
               title: Text('Logout'),
               trailing: Icon(Icons.logout),
               onTap: () {
-                SingletonKeeper.SetToken(null);
+                SingletonKeeper.SetToken(null,null);
                 Navigator.of(context).pop();
                 Navigator.of(context).push(MaterialPageRoute(
                   builder: (BuildContext context) => HomePage()

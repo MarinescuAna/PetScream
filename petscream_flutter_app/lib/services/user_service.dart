@@ -1,6 +1,7 @@
 import 'package:petscream_flutter_app/models/jwt_model.dart';
 import 'package:petscream_flutter_app/models/login_model.dart';
 import 'package:petscream_flutter_app/models/register_model.dart';
+import 'package:petscream_flutter_app/singleton/singleton_keeper.dart';
 
 import 'http_service.dart';
 import 'dart:convert';

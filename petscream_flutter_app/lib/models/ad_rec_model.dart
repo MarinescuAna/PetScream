@@ -41,21 +41,21 @@ class AdRecModel{
 
   factory AdRecModel.fromJson( Map<String, dynamic> json ){
     return AdRecModel(
-      postID: json["postID"],
-      title: json["title"],
-      petDescription: json["petDescription"],
-      ownerAddress: json["ownerAddress"],
-      founderAddress: json["founderAddress"],
-      lostPlaceAddress: json["lostPlaceAddress"],
-      founderName: json["founderName"],
-      founderPhone: json["founderPhone"],
-      lostDatetime: json["lostDatetime"],
-      postDatetime: json["postDatetime"],
-      foundDatetime: json["foundDatetime"],
-      status: json["status"],
-      userEmail: json["userEmail"],
-      contentImage: json["contentImage"],
-      name :json["name"]
+        postID: json["postID"],
+        title: json["title"],
+        petDescription: json["petDescription"],
+        ownerAddress: json["ownerAddress"],
+        founderAddress: json["founderAddress"],
+        lostPlaceAddress: json["lostPlaceAddress"],
+        founderName: json["founderName"],
+        founderPhone: json["founderPhone"],
+        lostDatetime: json["lostDatetime"],
+        postDatetime: json["postDatetime"],
+        foundDatetime: json["foundDatetime"],
+        status: json["status"],
+        userEmail: json["userEmail"],
+        contentImage: json["contentImage"],
+        name :json["name"]
     );
   }
 }

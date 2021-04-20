@@ -7,8 +7,7 @@ namespace PetScreamAspNET.DataAccessLayer.Domain.Domain
     public  enum Status
     {
         Found,
-        Lost,
-        Cancel
+        Lost
     }
     public class Post
     {

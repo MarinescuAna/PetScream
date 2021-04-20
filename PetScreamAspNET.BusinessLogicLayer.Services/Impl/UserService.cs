@@ -2,8 +2,6 @@
 using PetScreamAspNET.BusinessLogicLayer.Services.Interface;
 using PetScreamAspNET.DataAccessLayer.Domain.Domain;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace PetScreamAspNET.BusinessLogicLayer.Services.Impl

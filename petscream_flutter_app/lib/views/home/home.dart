@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:petscream_flutter_app/singleton/singleton_keeper.dart';
 import 'package:petscream_flutter_app/views/drawer/guest_drawer.dart';
 import 'package:petscream_flutter_app/views/drawer/logged_drawer.dart';
 import 'package:petscream_flutter_app/views/home/ads_page.dart';
-import 'package:petscream_flutter_app/views/home/categories.dart';
 import 'package:petscream_flutter_app/views/posts/insert_post.dart';
 
 class HomePage extends StatefulWidget {
@@ -12,10 +12,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  @override
-  void initState() {
-    super.initState();
-  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +23,6 @@ class _HomePageState extends State<HomePage> {
          new Container(
            decoration: buildBoxDecoration()
          ),
-          new Categories(),
           new Ads()
         ],
       ),
@@ -37,6 +33,7 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
+
 
   BoxDecoration buildBoxDecoration() {
     return new BoxDecoration(
